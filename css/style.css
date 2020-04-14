@@ -1,0 +1,20 @@
+/**
+ * Author: William Teixeira
+ * Website: https://williamteixeira.github.io/
+ * 
+ */
+
+.bg-orange {
+    background-color: #ffa83d;
+    color: #fff;
+}
+a.bg-orange {
+    background-color: #fff;
+    color: #ffa83d;
+    border-color: #ffa83d;
+}
+a.bg-orange:hover {
+    background-color: #ffa83d;
+    color: #fff;
+    border-color: #ffa83d;
+}

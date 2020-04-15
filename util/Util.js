@@ -30,7 +30,7 @@ class Util {
                 '\"' + employee.accessiontype + '\";' +
                 '\"' + new Date(employee.agreementdate).toLocaleDateString() + '\";' +
                 '\"' + Util.removeFormat(employee.percent) + '\";' +
-                '\"' + employee.monthlong + '\";' +
+                '\"' + employee.dayslong + '\";' +
                 '\"' + employee.bankcode + '\";' +
                 '\"' + employee.bankagency + '\";' +
                 '\"' + employee.dvbankagency + '\";' +

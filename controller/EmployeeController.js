@@ -113,7 +113,7 @@ class EmployeeController {
                 employee.accessiontype,
                 employee.agreementdate,
                 employee.percent,
-                employee.monthlong,
+                employee.dayslong,
                 employee.bankcode,
                 employee.bankagency,
                 employee.dvbankagency,

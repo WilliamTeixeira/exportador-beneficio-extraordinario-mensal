@@ -7,7 +7,7 @@
 class Employee {
 
     constructor(name, birth, namemother, admissiondate, cpf, pispasep, accessiontype, agreementdate, percent,
-        monthlong, bankcode, bankagency, dvbankagency, accountbank, dvaccountbank, accountype, lastsalary,
+        dayslong, bankcode, bankagency, dvbankagency, accountbank, dvaccountbank, accountype, lastsalary,
         penultimatesalary, prepenultimatepalary) {
         
         this._id;
@@ -20,7 +20,7 @@ class Employee {
         this._accessiontype = accessiontype;    
         this._agreementdate = agreementdate;
         this._percent = percent;
-        this._monthlong = monthlong;
+        this._dayslong = dayslong;
         this._bankcode = bankcode;
         this._bankagency = bankagency;
         this._dvbankagency = dvbankagency;
@@ -97,11 +97,11 @@ class Employee {
         this._percent = value;
     }
 
-    get monthlong () {
-        return this._monthlong;
+    get dayslong () {
+        return this._dayslong;
     }
-    set monthlong (value) {
-        this._monthlong = value;
+    set dayslong (value) {
+        this._dayslong = value;
     }
 
     get bankcode () {

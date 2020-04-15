@@ -8,10 +8,10 @@ class Util {
 
     static exportToCsv(employees, company) {
 
-        let csvContent = '\"Tipo Inscricao\";\"CNPJ/CEI\";\"CNO\";\"Data Admissao\";\"CPF Trabalhador\";\"PIS/PASEP Trabalhador\";\"Nome Trabalhador\";\"Nome Mae Trabalhador\";\"Data Nascimento Trabalhador\";\"Tipo Adesao\";\"Data Acordo\";\"Percentual Reducao Carga Horaria\";\"Meses Duracao\";\"Codigo Banco\";\"Agencia Bancaria\";\"DV Agencia Bancaria\";\"Conta Bancaria\";\"DV Conta Bancaria\";\"Tipo Conta\";\"Ultimo Salario\";\"Penultimo Salario\";\"Antepenultimo Salario\"';
+        let csvContent = '\"Tipo Inscricao\";\"CNPJ/CEI\";\"CNO\";\"Data Admissao\";\"CPF Trabalhador\";\"PIS/PASEP Trabalhador\";\"Nome Trabalhador\";\"Nome Mae Trabalhador\";\"Data Nascimento Trabalhador\";\"Tipo Adesao\";\"Data Acordo\";\"Percentual Reducao Carga Horaria\";\"Dias Duracao\";\"Codigo Banco\";\"Agencia Bancaria\";\"DV Agencia Bancaria\";\"Conta Bancaria\";\"DV Conta Bancaria\";\"Tipo Conta\";\"Ultimo Salario\";\"Penultimo Salario\";\"Antepenultimo Salario\"';
         csvContent += '\r\n';
 
-        employees.map(dataEmployee => {
+        employees.map((dataEmployee,i) => {
 
             let employee = new Employee();
             employee.loadFromJSON(dataEmployee);
@@ -41,7 +41,7 @@ class Util {
                 '\"' + Util.removeFormat(employee.penultimatesalary) + '\";' +
                 '\"' + Util.removeFormat(employee.prepenultimatepalary) + '\"';
 
-            csvContent += '\r\n';
+                (i != employees.length - 1) ? csvContent += '\r\n' : csvContent += '';
 
         });
 

@@ -4,7 +4,7 @@
  * 
  */
 
-class Company {
+export default class Company {
 
     constructor (registertype, cnpjcei, cno){
         this._registertype = registertype;

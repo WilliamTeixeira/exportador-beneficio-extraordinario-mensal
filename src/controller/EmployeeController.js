@@ -4,7 +4,12 @@
  * 
  */
 
-class EmployeeController {
+import Employee from '../model/Employee';
+import Company from '../model/Company';
+import Util from '../util/Util';
+
+
+export default class EmployeeController {
 
     constructor(formIdCreate, formIdUpdate, tableId, boxCompany) {
 
@@ -12,7 +17,7 @@ class EmployeeController {
         this.formUpdate = document.getElementById(formIdUpdate);
         this.table = document.getElementById(tableId);
         this.formCompany = document.getElementById(boxCompany);
-      
+
         this.onSubmit();
         this.onEdit();
         this.selectAll();
@@ -44,7 +49,7 @@ class EmployeeController {
             this.formUpdate.reset();
             btnSubmit.disabled = false;
             this.showPanelCreate();
-            
+
         });
 
     }
@@ -57,7 +62,7 @@ class EmployeeController {
 
         this.form.addEventListener("submit", (event) => {
 
-            event.preventDefault();          
+            event.preventDefault();
             let btnSubmit = this.form.querySelector("[type=submit]");
             btnSubmit.disabled = true;
 
@@ -67,7 +72,7 @@ class EmployeeController {
                 this.addLine(values);
                 this.form.reset();
                 btnSubmit.disabled = false;
-               
+
             } else {
                 btnSubmit.disabled = false;
                 return false;
@@ -129,14 +134,14 @@ class EmployeeController {
         }
     }
 
-   
 
-    selectAll(){
-        
+
+    selectAll() {
+
         let employees = Employee.getEmployeesStorage();
 
         employees.forEach(dataEmployee => {
-            
+
             let employee = new Employee();
 
             employee.loadFromJSON(dataEmployee);
@@ -160,8 +165,8 @@ class EmployeeController {
 
     }
 
-    getTr(dataEmployee, tr = null){
-        if(tr === null){
+    getTr(dataEmployee, tr = null) {
+        if (tr === null) {
             tr = document.createElement("tr");
         }
         //JSON.stringfy converte o objeto em json
@@ -170,7 +175,7 @@ class EmployeeController {
         tr.innerHTML = `
                 <td>${dataEmployee.cpf}</td>
                 <td>${dataEmployee.name}</td>
-                <td>${(dataEmployee.accessiontype == 0) ? "Suspensão": "Redução" }</td>
+                <td>${(dataEmployee.accessiontype == 0) ? "Suspensão" : "Redução"}</td>
                 <td>
                     <div class="btn-group btn-group-sm" role="group">
                         <button type="button" class="btn btn-edit btn-outline-primary"><i class="fas fa-pencil-alt"></i></button>
@@ -191,10 +196,10 @@ class EmployeeController {
         tr.querySelector(".btn-delete").addEventListener("click", (e) => {
 
             if (confirm("Deseja realmente excluir?")) {
-               
+
                 let employee = new Employee();
                 employee.loadFromJSON(JSON.parse(tr.dataset.employee));
-                employee.remove(); 
+                employee.remove();
 
                 tr.remove();
                 this.updateCount();
@@ -210,7 +215,7 @@ class EmployeeController {
             for (let name in json) {
 
                 let field = this.formUpdate.querySelector(`[name=${name.replace("_", "")}]`);
-                
+
                 if (field) {
 
                     switch (field.type) {
@@ -247,7 +252,7 @@ class EmployeeController {
     }
     updateCount() {
         let numberEmployees = 0;
-       
+
         [...this.table.children].forEach((tr) => {
             numberEmployees++;
         });
@@ -255,30 +260,30 @@ class EmployeeController {
         document.querySelector("#number-employee").innerHTML = numberEmployees;
     }
 
-    export(){
-        
+    export() {
+
         let aElement = this.formCompany.querySelector("a");
-        
+
         aElement.onclick = () => {
 
             let company = new Company();
             company.loadFromForm(this.formCompany.querySelectorAll("input"));
-            
+
             let employeesStorage = Employee.getEmployeesStorage();
-            
+
             let csvContent = Util.exportToCsv(employeesStorage, company);
-            
+
             var encodedUri = "data:text/csv;charset=utf-8,";
             encodedUri += encodeURI(csvContent);
-    
+
             aElement.setAttribute("href", encodedUri);
             aElement.setAttribute("download", "arquivo_bem.csv");
-   
+
         };
 
     }
 
-   
+
 
 
 }

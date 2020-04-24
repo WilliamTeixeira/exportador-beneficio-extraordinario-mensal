@@ -32,13 +32,13 @@
 
     <title>Exportador Benefício Extraordinário Mensal - B.E.M.</title>
 
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="shortcut icon" href="./img/favicon.ico">
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body class="d-flex flex-column h-100" id="exportador">
@@ -56,10 +56,10 @@
         <div class="collapse navbar-collapse" id="navbarToggler">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#exportador" onclick="Util.showDivExport()">Exportador </a>
+                    <a class="nav-link" href="#exportador" id="divexport" >Exportador </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#box-faq" onclick="Util.showDivFaq()">Como Usar ?</a>
+                    <a class="nav-link" href="#box-faq" id="divfaq" >Como Usar ?</a>
                 </li>
             </ul>
 
@@ -98,13 +98,12 @@
                     <div class="form-group col-sm-3">
                         <label for="inputCnpjCei">CNPJ/CEI</label>
                         <input type="text" class="form-control" id="inputCnpjCei" placeholder="00.000.000/0000-00"
-                            name="cnpjcei" onkeyup="Util.cnpjCeiFormat(this)">
+                            name="cnpjcei">
                     </div>
 
                     <div class="form-group col-sm-3">
                         <label for="inputCNO">CNO</label>
-                        <input type="text" class="form-control" id="inputCNO" placeholder="000.000.000-00" name="cno"
-                            onkeyup="Util.cnoFormat(this)">
+                        <input type="text" class="form-control" id="inputCNO" placeholder="000.000.000-00" name="cno">
                     </div>
 
                     <div class="col-sm-3">
@@ -162,36 +161,36 @@
 
                                 <div class="form-group">
                                     <label for="inputName">Nome</label>
-                                    <input type="text" class="form-control" id="inputName"
+                                    <input type="text" class="form-control inputName" id="inputName"
                                         placeholder="Digite o nome do funcionário" name="name" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="inputBirth">Nascimento</label>
-                                    <input type="date" class="form-control" id="inputBirth" name="birth">
+                                    <input type="date" class="form-control inputBirth" id="inputBirth" name="birth">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="inputNameMother">Nome da Mãe</label>
-                                    <input type="text" class="form-control" id="inputNameMother"
+                                    <input type="text" class="form-control inputNameMother" id="inputNameMother"
                                         placeholder="Digite o nome da Mãe do funcionário" name="namemother">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="inputAdmissionDate">Data de Admissão</label>
-                                    <input type="date" class="form-control" id="inputAdmissionDate"
+                                    <input type="date" class="form-control inputAdmissionDate" id="inputAdmissionDate"
                                         name="admissiondate">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="inputCpf">CPF</label>
-                                    <input type="text" class="form-control" id="inputCpf" name="cpf"
-                                        placeholder="000.000.000-00" onkeyup="Util.cpfFormat(this)" required>
+                                    <input type="text" class="form-control inputCpf" id="inputCpf" name="cpf"
+                                        placeholder="000.000.000-00"  required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="inputPisPasep">PIS/PASEP</label>
-                                    <input type="text" class="form-control" id="inputPisPasep" name="pispasep">
+                                    <input type="text" class="form-control inputPisPasep" id="inputPisPasep" name="pispasep">
                                 </div>
 
                                 <div class="form-group">
@@ -211,67 +210,67 @@
 
                                 <div class="form-group">
                                     <label for="inputAgreementDate">Data do Acordo</label>
-                                    <input type="date" class="form-control" id="inputAgreementDate"
+                                    <input type="date" class="form-control inputAgreementDate" id="inputAgreementDate"
                                         name="agreementdate">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="inputPercent">Percentual Reducao Carga Horaria</label>
-                                    <input type="text" class="form-control" id="inputPercent" name="percent">
+                                    <input type="text" class="form-control inputPercent" id="inputPercent" name="percent">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="inputDaysLong">Dias de Duração</label>
-                                    <input type="number" class="form-control" id="inputDaysLong" name="dayslong">
+                                    <input type="number" class="form-control inputDaysLong" id="inputDaysLong" name="dayslong">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="inputBankCode">Código do Banco</label>
-                                    <input type="text" class="form-control" id="inputBankCode" name="bankcode">
+                                    <input type="text" class="form-control inputBankCode" id="inputBankCode" name="bankcode">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="inputBankAgency">Agência Bancária</label>
-                                    <input type="text" class="form-control" id="inputBankAgency" name="bankagency">
+                                    <input type="text" class="form-control inputBankAgency" id="inputBankAgency" name="bankagency">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="inputDvBankAgency">DV Agência Bancária</label>
-                                    <input type="text" class="form-control" id="inputDvBankAgency" name="dvbankagency">
+                                    <input type="text" class="form-control inputDvBankAgency" id="inputDvBankAgency" name="dvbankagency">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="inputBankAccount">Conta Bancária</label>
-                                    <input type="text" class="form-control" id="inputBankAccount" name="accountbank">
+                                    <input type="text" class="form-control inputBankAccount" id="inputBankAccount" name="accountbank">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="inputDvAccountBank">DV Conta Bancária</label>
-                                    <input type="text" class="form-control" id="inputDvAccountBank"
+                                    <input type="text" class="form-control inputDvAccountBank" id="inputDvAccountBank"
                                         name="dvaccountbank">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="inputAccountType">Tipo de Conta</label>
-                                    <input type="text" class="form-control" id="inputAccountType" name="accountype">
+                                    <input type="text" class="form-control inputAccountType" id="inputAccountType" name="accountype">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="inputLastSalary">Último Salário</label>
-                                    <input type="text" class="form-control" id="inputLastSalary" name="lastsalary"
-                                        onkeyup="Util.reaisFormat(this)">
+                                    <input type="text" class="form-control inputLastSalary" id="inputLastSalary" name="lastsalary"
+                                       >
                                 </div>
 
                                 <div class="form-group">
                                     <label for="inputPenultimateSalary">Penúltimo Salário</label>
-                                    <input type="text" class="form-control" id="inputPenultimateSalary"
-                                        name="penultimatesalary" onkeyup="Util.reaisFormat(this)">
+                                    <input type="text" class="form-control inputPenultimateSalary" id="inputPenultimateSalary"
+                                        name="penultimatesalary" >
                                 </div>
 
                                 <div class="form-group">
                                     <label for="inputPrePenultimateSalary">Antepenúltimo Salario</label>
-                                    <input type="text" class="form-control" id="inputPrePenultimateSalary"
-                                        name="prepenultimatepalary" onkeyup="Util.reaisFormat(this)">
+                                    <input type="text" class="form-control inputPrePenultimateSalary" id="inputPrePenultimateSalary"
+                                        name="prepenultimatepalary">
                                 </div>
 
                             </div>
@@ -294,115 +293,115 @@
                             <div class="box-body">
 
                                 <div class="form-group">
-                                    <label for="inputName">Nome</label>
-                                    <input type="text" class="form-control" id="inputName"
+                                    <label for="inputName2">Nome</label>
+                                    <input type="text" class="form-control inputName" id="inputName2"
                                         placeholder="Digite o nome do funcionário" name="name" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="inputBirth">Nascimento</label>
-                                    <input type="date" class="form-control" id="inputBirth" name="birth">
+                                    <label for="inputBirth2">Nascimento</label>
+                                    <input type="date" class="form-control inputBirth" id="inputBirth2" name="birth">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="inputNameMother">Nome da Mãe</label>
-                                    <input type="text" class="form-control" id="inputNameMother"
+                                    <label for="inputNameMother2">Nome da Mãe</label>
+                                    <input type="text" class="form-control inputNameMother" id="inputNameMother2"
                                         placeholder="Digite o nome da Mãe do funcionário" name="namemother">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="inputAdmissionDate">Data de Admissão</label>
-                                    <input type="date" class="form-control" id="inputAdmissionDate"
+                                    <label for="inputAdmissionDate2">Data de Admissão</label>
+                                    <input type="date" class="form-control inputAdmissionDate" id="inputAdmissionDate2"
                                         name="admissiondate">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="inputCpf">CPF</label>
-                                    <input type="text" class="form-control" id="inputCpf" name="cpf"
-                                        placeholder="999.999.999-99" onkeyup="Util.cpfFormat(this)" required>
+                                    <label for="inputCpf2">CPF</label>
+                                    <input type="text" class="form-control inputCpf" id="inputCpf2" name="cpf"
+                                        placeholder="999.999.999-99"  required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="inputPisPasep">PIS/PASEP</label>
-                                    <input type="text" class="form-control" id="inputPisPasep" name="pispasep">
+                                    <label for="inputPisPasep2">PIS/PASEP</label>
+                                    <input type="text" class="form-control inputPisPasep" id="inputPisPasep2" name="pispasep">
                                 </div>
 
                                 <div class="form-group">
                                     <label>Tipo de Adesão</label>
                                     <div class="radio">
-                                        <label for="inputSuspension">
-                                            <input type="radio" id="inputSuspension" name="accessiontype" value="0">
+                                        <label for="inputSuspension2">
+                                            <input type="radio" id="inputSuspension2" name="accessiontype" value="0">
                                             Suspensão de Contrato de Trabalho</label>
                                     </div>
                                     <div class="radio">
-                                        <label for="inputReduction">
-                                            <input type="radio" id="inputReduction" name="accessiontype" value="1"
+                                        <label for="inputReduction2">
+                                            <input type="radio" id="inputReduction2" name="accessiontype" value="1"
                                                 checked>
                                             Redução de Carga Horária</label>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="inputAgreementDate">Data do Acordo</label>
-                                    <input type="date" class="form-control" id="inputAgreementDate"
+                                    <label for="inputAgreementDate2">Data do Acordo</label>
+                                    <input type="date" class="form-control inputAgreementDate" id="inputAgreementDate2"
                                         name="agreementdate">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="inputPercent">Percentual Reducao Carga Horaria</label>
-                                    <input type="text" class="form-control" id="inputPercent" name="percent">
+                                    <label for="inputPercent2">Percentual Reducao Carga Horaria</label>
+                                    <input type="text" class="form-control inputPercent" id="inputPercent2" name="percent">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="inputDaysLong">Dias de Duração</label>
-                                    <input type="number" class="form-control" id="inputDaysLong" name="dayslong">
+                                    <label for="inputDaysLong2">Dias de Duração</label>
+                                    <input type="number" class="form-control inputDaysLong" id="inputDaysLong2" name="dayslong">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="inputBankCode">Código do Banco</label>
-                                    <input type="text" class="form-control" id="inputBankCode" name="bankcode">
+                                    <label for="inputBankCode2">Código do Banco</label>
+                                    <input type="text" class="form-control inputBankCode" id="inputBankCode2" name="bankcode">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="inputBankAgency">Agência Bancária</label>
-                                    <input type="text" class="form-control" id="inputBankAgency" name="bankagency">
+                                    <label for="inputBankAgency2">Agência Bancária</label>
+                                    <input type="text" class="form-control inputBankAgency" id="inputBankAgency2" name="bankagency">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="inputDvBankAgency">DV Agência Bancária</label>
-                                    <input type="text" class="form-control" id="inputDvBankAgency" name="dvbankagency">
+                                    <label for="inputDvBankAgency2">DV Agência Bancária</label>
+                                    <input type="text" class="form-control inputDvBankAgency" id="inputDvBankAgency2" name="dvbankagency">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="inputBankAccount">Conta Bancária</label>
-                                    <input type="text" class="form-control" id="inputBankAccount" name="accountbank">
+                                    <label for="inputBankAccount2">Conta Bancária</label>
+                                    <input type="text" class="form-control inputBankAccount" id="inputBankAccount2" name="accountbank">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="inputDvAccountBank">DV Conta Bancária</label>
-                                    <input type="text" class="form-control" id="inputDvAccountBank"
+                                    <label for="inputDvAccountBank2">DV Conta Bancária</label>
+                                    <input type="text" class="form-control inputDvAccountBank" id="inputDvAccountBank2"
                                         name="dvaccountbank">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="inputAccountType">Tipo de Conta</label>
-                                    <input type="text" class="form-control" id="inputAccountType" name="accountype">
+                                    <label for="inputAccountType2">Tipo de Conta</label>
+                                    <input type="text" class="form-control inputAccountType" id="inputAccountType2" name="accountype">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="inputLastSalary">Último Salário</label>
-                                    <input type="text" class="form-control" id="inputLastSalary" name="lastsalary">
+                                    <label for="inputLastSalary2">Último Salário</label>
+                                    <input type="text" class="form-control inputLastSalary" id="inputLastSalary2" name="lastsalary">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="inputPenultimateSalary">Penúltimo Salário</label>
-                                    <input type="text" class="form-control" id="inputPenultimateSalary"
+                                    <label for="inputPenultimateSalary2">Penúltimo Salário</label>
+                                    <input type="text" class="form-control inputPenultimateSalary" id="inputPenultimateSalary2"
                                         name="penultimatesalary">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="inputPrePenultimateSalary">Antepenúltimo Salario</label>
-                                    <input type="text" class="form-control" id="inputPrePenultimateSalary"
+                                    <label for="inputPrePenultimateSalary2">Antepenúltimo Salario</label>
+                                    <input type="text" class="form-control inputPrePenultimateSalary" id="inputPrePenultimateSalary2"
                                         name="prepenultimatepalary">
                                 </div>
 
@@ -560,7 +559,7 @@
             </small>
 
             <small>
-            <a href="#export" class="btn btn-sm bg-orange" onclick="Util.scrollTop()">
+            <a href="#export" class="btn btn-sm bg-orange" id="scrolltop">
                 <i class="fas fa-arrow-up"></i>
             </a>
         </small>
@@ -582,31 +581,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
 
-    <script src="model/Employee.js"></script>
-    <script src="model/Company.js"></script>
-    <script src="util/Util.js"></script>
-    <script src="controller/EmployeeController.js"></script>
-    <script src="index.js"></script>
-
-
-    <script>
-        // $(document).ready(function(){
-        //     if($("input[name=registertype]:checked").val() == 1){
-        //         $('#inputCnpjCei').mask('99.999.999/9999-99');
-        //     }else{
-        //         $('#inputCnpjCei').mask('99.999.99999/99');
-        //     }
-        // });
-
-        // $(document).ready(function(){
-        //     $('#inputCNO').mask('999.999.999-99');
-        // });
-
-
-        // $(document).ready(function(){
-        //     $('#inputCpf').mask('999.999.999-99');
-        // });
-    </script>
+    <script src="./js/bundle.js"></script>
 
 
 </body>

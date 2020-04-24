@@ -4,7 +4,9 @@
  * 
  */
 
-class Util {
+import Employee from '../model/Employee';
+
+export default class Util {
 
     static exportToCsv(employees, company) {
 

@@ -4,7 +4,7 @@
  * 
  */
 
-class Employee {
+export default class Employee {
 
     constructor(name, birth, namemother, admissiondate, cpf, pispasep, accessiontype, agreementdate, percent,
         dayslong, bankcode, bankagency, dvbankagency, accountbank, dvaccountbank, accountype, lastsalary,
